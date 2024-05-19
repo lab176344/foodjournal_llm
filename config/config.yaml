@@ -4,12 +4,17 @@ cookie:
   name: password_cookie
 credentials:
   usernames:
+    dummy:
+      email: dummy@email.com
+      logged_in: false
+      name: Dummy
+      password: $2b$12$XdGvTE2P2zd1HHZBqQc9VOw0E/B5FmfFn12ZXX3cAzrsScToNUHi6
     lakshmanb:
       email: akshan.ram4@gmail.com
       failed_login_attempts: 0
       logged_in: false
       name: Lakshman Balasubramanian
-      password: abc
+      password: $2b$12$4ztgV/56vyakGgLy2WQt2Ost6w88jmiejgSYVYxkHDOyMr4Kc4toy
 pre-authorized:
   emails:
   - akshan.ram4@gmail.com
