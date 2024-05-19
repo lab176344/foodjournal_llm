@@ -1,7 +1,7 @@
 import streamlit as st
 
 from food_journal_llm.src.retriver import SQLRetriever
-from src.dashboard_ui import DataframeTableModel, IngredientsCount, MoodPieChart
+from ui.dashboard_ui import DataframeTableModel, IngredientsCount, MoodPieChart
 
 st.set_page_config(page_title="Dashboard", layout="wide", page_icon="📊")
 st.title("📊 Dashboard")

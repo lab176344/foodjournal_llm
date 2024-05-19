@@ -5,7 +5,7 @@ import pandas as pd
 import streamlit as st
 
 from food_journal_llm.src.retriver import SQLRetriever
-from src.utils import mood_to_emoji
+from ui.utils import mood_to_emoji
 
 
 class DataframeTableModel:

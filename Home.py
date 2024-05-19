@@ -4,7 +4,7 @@ import yaml  # type: ignore
 from yaml.loader import SafeLoader  # type: ignore
 
 from food_journal_llm.src.retriver import SQLRetriever
-from src.home_ui import FoodJournal, IngredientAnalyser
+from ui.home_ui import FoodJournal, IngredientAnalyser
 
 # Have a signup and login page
 # use two buttons to switch between the two
