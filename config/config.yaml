@@ -10,12 +10,6 @@ credentials:
       logged_in: false
       name: Lakshman Balasubramanian
       password: abc
-    malam:
-      email: mala@emal.com
-      failed_login_attempts: 0
-      logged_in: false
-      name: mala
-      password: $2b$12$tfXRMNAxU7MjJuJuLkkoSe/wsUhEhPCpJ.mNamP/CwyX/v65pZaNO
 pre-authorized:
   emails:
   - akshan.ram4@gmail.com
