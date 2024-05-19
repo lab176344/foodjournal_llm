@@ -41,20 +41,23 @@ if option == "Login":
         time = journal_entry["time"]
         after_eating = journal_entry["after_eating"]
         if submit:
-
-            table_name = "food_journal_user_" + username
-            prompt = f"insert into {table_name} in the same order (username, password, meal, meal_times, date, time, mood, ingredients) values ('{username}', {username}, '{food}', '{meal_cat}', '{date}', '{time}', '{after_eating}', ' {ingredients}')"  # noqa E501
-            response = sql_retriever.insert(prompt)
-            response_content = response.response
-            if (
-                "inserted" in response_content
-                or "updated" in response_content
-                or "successful" in response_content
-                or "successfully" in response_content
-            ):
-                st.info("Your entry is recorded")
+            # Check if all variables are valid
+            if not all([food, meal_cat, date, time, after_eating]):
+                st.error("Please fill in all fields before submitting.")
             else:
-                st.info("Try again later")
+                table_name = "food_journal_user_" + username
+                prompt = f"insert into {table_name} in the same order (username, password, meal, meal_times, date, time, mood, ingredients) values ('{username}', {username}, '{food}', '{meal_cat}', '{date}', '{time}', '{after_eating}', ' {ingredients}')"  # noqa E501
+                response = sql_retriever.insert(prompt)
+                response_content = response.response
+                if (
+                    "inserted" in response_content
+                    or "updated" in response_content
+                    or "successful" in response_content
+                    or "successfully" in response_content
+                ):
+                    st.info("Your entry is recorded")
+                else:
+                    st.info("Try again later")
     elif st.session_state["authentication_status"] is False:
         st.error("Username/password is incorrect")
     elif st.session_state["authentication_status"] is None:
