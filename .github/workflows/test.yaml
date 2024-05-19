@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.11"]
+        python-version: ["3.12"]
     steps:
         - name: 'Checkout'
           uses: 'actions/checkout@v4'
@@ -19,11 +19,6 @@ jobs:
           uses: actions/setup-python@v3
           with:
             python-version: ${{ matrix.python-version }}
-
-        - id: 'auth'
-          uses: 'google-github-actions/auth@v2'
-          with:
-            credentials_json: '${{ secrets.GCP_MOII_API_ANALYTICS_SA_KEY }}'
             
         #----------------------------------------------
         #  -----  install & configure poetry  -----
