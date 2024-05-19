@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "food-journal-llm"
+version = "0.1.0"
+description = "Streamlit for interaction with a SQL database in NL"
+authors = ["lakshman <akshan.ram4@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+streamlit = "^1.31.0"
+plotly = "^5.18.0"
+openai = "^1.11.1"
+sqlalchemy = "^2.0.25"
+spacy = "^3.7.3"
+python-dotenv = "^1.0.1"
+streamlit-authenticator = "^0.3.1"
+llama-index = "^0.10.27"
+pyyaml = "^6.0.1"
+watchdog = "^4.0.0"
+llama-index-llms-openai = "^0.1.15"
+llama-index-llms-ollama = "^0.1.2"
+matplotlib = "^3.8.4"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+black = "*"
+pre-commit = "^3.7.0"
+types-pyyaml = "^6.0.12.20240311"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
