@@ -1,7 +1,12 @@
 import streamlit as st
 
 from food_journal_llm.src.retriver import SQLRetriever
-from ui.dashboard_ui import DataframeTableModel, IngredientsCount, MoodPieChart
+from src.dashboard_ui import (
+    DataframeTableModel,
+    IngredientsCount,
+    MoodPieChart,
+    TimeChart,
+)
 
 st.set_page_config(page_title="Dashboard", layout="wide", page_icon="📊")
 st.title("📊 Dashboard")
@@ -22,3 +27,7 @@ with st.spinner("Analysing your journal..."):
     # Retrieve the mood data
     mood_pie_chart = MoodPieChart(sql_retriever)
     mood_pie_chart.render(mood)
+
+    # Retrive the time split data
+    time_chart = TimeChart(sql_retriever)
+    time_chart.render()
